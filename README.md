@@ -1,39 +1,15 @@
 # Eslam AbdElhakem Portfolio
 
-A responsive personal portfolio created for Eslam AbdElhakem. It highlights a career across software engineering, product delivery, code evaluation, teaching, and agile project coordination.
+A responsive personal portfolio built with only HTML and CSS.
 
-Live site: [eslamabdelhakem.github.io](https://eslamabdelhakem.github.io/)
+- Live site: [eslamabdelhakem.github.io](https://eslamabdelhakem.github.io/)
+- Source code: [GitHub repository](https://github.com/EslamAbdElhakem/EslamAbdElhakem.github.io)
+- Downloadable professional profile included
 
-## Highlights
+## Project files
 
-- Responsive one-page experience
-- Semantic, accessible HTML
-- Reduced-motion support
-- Downloadable professional profile
-- Direct email, phone, and LinkedIn links
+- `index.html` contains the complete semantic page structure and content.
+- `style.css` contains the responsive layout, visual design, and motion preferences.
+- `Eslam-AbdElhakem-Profile.pdf` is the downloadable professional profile.
 
-## Run locally
-
-```bash
-npm install
-npm run dev
-```
-
-## Validate
-
-```bash
-npm run build
-node --test tests/rendered-html.test.mjs
-```
-
-## Export for GitHub Pages
-
-Run the production build, then create a static Pages bundle:
-
-```bash
-npm run export:pages
-```
-
-## Built with
-
-React, TypeScript, Vinext, and CSS.
+No JavaScript, frameworks, package managers, or build tools are required.

@@ -1,5 +1,3 @@
-@import "tailwindcss";
-
 :root {
   --ink: #132923;
   --forest: #173f35;
@@ -23,7 +21,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -32,9 +30,9 @@ a {
   text-decoration: none;
 }
 
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
+a:focus-visible {
+  outline: 3px solid var(--mint);
+  outline-offset: 4px;
 }
 
 ::selection {
@@ -50,8 +48,6 @@ a {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   border-bottom: 1px solid var(--line);
-  position: relative;
-  z-index: 10;
 }
 
 .brand {
@@ -59,11 +55,11 @@ a {
   align-items: center;
   gap: 12px;
   width: fit-content;
-  font-weight: 680;
+  font-weight: 700;
   letter-spacing: -0.02em;
 }
 
-.brand > span:first-child {
+.brand-mark {
   width: 38px;
   height: 38px;
   border-radius: 50%;
@@ -71,7 +67,7 @@ a {
   place-items: center;
   background: var(--forest);
   color: var(--paper);
-  font-family: var(--font-geist-mono), monospace;
+  font-family: "Courier New", monospace;
   font-size: 12px;
   letter-spacing: -0.08em;
 }
@@ -89,9 +85,7 @@ footer > a {
 }
 
 nav a:hover,
-nav a:focus-visible,
-footer > a:hover,
-footer > a:focus-visible {
+footer > a:hover {
   color: var(--ink);
 }
 
@@ -101,18 +95,19 @@ footer > a:focus-visible {
   border: 1px solid var(--ink);
   border-radius: 999px;
   font-size: 14px;
-  font-weight: 650;
+  font-weight: 700;
   transition: background 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
-.header-cta:hover,
-.header-cta:focus-visible {
+.header-cta:hover {
   background: var(--ink);
   color: white;
   transform: translateY(-2px);
 }
 
-.section-shell {
+.section-shell,
+.experience-inner,
+.contact-inner {
   width: min(1240px, calc(100% - 48px));
   margin: 0 auto;
 }
@@ -132,7 +127,7 @@ footer > a:focus-visible {
 .section-label,
 .credential-type,
 .contact-overline {
-  font-family: var(--font-geist-mono), monospace;
+  font-family: "Courier New", monospace;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 11px;
@@ -156,7 +151,7 @@ footer > a:focus-visible {
 
 .kicker {
   color: var(--forest);
-  font-weight: 650;
+  font-weight: 700;
   margin: 0 0 20px;
 }
 
@@ -166,7 +161,7 @@ footer > a:focus-visible {
   font-size: clamp(54px, 7.2vw, 106px);
   line-height: 0.93;
   letter-spacing: -0.075em;
-  font-weight: 620;
+  font-weight: 600;
 }
 
 .hero h1 em {
@@ -199,12 +194,11 @@ footer > a:focus-visible {
   border-radius: 999px;
   padding: 0 24px;
   font-size: 14px;
-  font-weight: 670;
+  font-weight: 700;
   transition: transform 180ms ease, background 180ms ease;
 }
 
-.button:hover,
-.button:focus-visible {
+.button:hover {
   transform: translateY(-3px);
 }
 
@@ -213,8 +207,7 @@ footer > a:focus-visible {
   color: white;
 }
 
-.button.primary:hover,
-.button.primary:focus-visible {
+.button.primary:hover {
   background: var(--forest-deep);
 }
 
@@ -239,7 +232,7 @@ footer > a:focus-visible {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-  font-family: var(--font-geist-mono), monospace;
+  font-family: "Courier New", monospace;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 10px;
@@ -374,7 +367,7 @@ footer > a:focus-visible {
   font-size: clamp(38px, 5vw, 70px);
   line-height: 1.05;
   letter-spacing: -0.06em;
-  font-weight: 560;
+  font-weight: 600;
 }
 
 .about-content > p {
@@ -407,7 +400,7 @@ footer > a:focus-visible {
 }
 
 .capability-number {
-  font-family: var(--font-geist-mono), monospace;
+  font-family: "Courier New", monospace;
   font-size: 11px;
   color: var(--muted);
 }
@@ -428,11 +421,9 @@ footer > a:focus-visible {
 }
 
 .experience {
-  width: 100%;
-  max-width: none;
   background: var(--forest-deep);
   color: white;
-  padding: 130px max(24px, calc((100vw - 1240px) / 2)) 120px;
+  padding: 130px 0 120px;
 }
 
 .section-heading {
@@ -460,7 +451,7 @@ footer > a:focus-visible {
 
 .experience-index,
 .experience-date {
-  font-family: var(--font-geist-mono), monospace;
+  font-family: "Courier New", monospace;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -472,7 +463,7 @@ footer > a:focus-visible {
   font-size: clamp(25px, 3vw, 40px);
   line-height: 1.1;
   letter-spacing: -0.045em;
-  font-weight: 530;
+  font-weight: 600;
 }
 
 .company {
@@ -501,14 +492,6 @@ footer > a:focus-visible {
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: rgba(255, 255, 255, 0.72);
   font-size: 11px;
-}
-
-.toolkit {
-  padding-top: 140px;
-}
-
-.toolkit-content h2 {
-  max-width: 850px;
 }
 
 .skill-cloud {
@@ -562,9 +545,7 @@ footer > a:focus-visible {
 }
 
 .contact {
-  width: 100%;
-  max-width: none;
-  padding: 140px max(24px, calc((100vw - 1240px) / 2));
+  padding: 140px 0;
   background: var(--mint);
   text-align: center;
 }
@@ -604,13 +585,12 @@ footer > a:focus-visible {
   padding: 14px 20px;
   border-radius: 999px;
   border: 1px solid rgba(19, 41, 35, 0.45);
-  font-weight: 650;
+  font-weight: 700;
   font-size: 14px;
   transition: background 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
-.contact-links a:hover,
-.contact-links a:focus-visible {
+.contact-links a:hover {
   background: var(--ink);
   color: white;
   transform: translateY(-3px);
@@ -644,9 +624,17 @@ footer > a:last-child {
   animation: enter 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.delay-1 { animation-delay: 100ms; }
-.delay-2 { animation-delay: 200ms; }
-.delay-3 { animation-delay: 300ms; }
+.delay-1 {
+  animation-delay: 100ms;
+}
+
+.delay-2 {
+  animation-delay: 200ms;
+}
+
+.delay-3 {
+  animation-delay: 300ms;
+}
 
 @keyframes enter {
   from {
@@ -690,9 +678,11 @@ footer > a:last-child {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 760px) {
   .site-header,
   .section-shell,
+  .experience-inner,
+  .contact-inner,
   footer {
     width: min(100% - 32px, 1240px);
   }
